@@ -1,27 +1,24 @@
-
 const totalCategories = document.querySelectorAll(".item");
 console.log(`Number of categories: ${totalCategories.length}`);
 
-// // Для каждого элемента li.item в списке ul#categories,
-// найдет и выведет в консоль текст заголовка элемента(тега < h2 >)
-//  и количество элементов в категории(всех вложенных в него < li >).
+// Variant 01  forEach ============================
 
-// Category: Animals
-// Elements: 4
+const category = (array) => {
+  array.forEach((element) => {
+    const title = element.querySelector("h2");
+    const message = `Category: ${title.textContent}. Elements: ${element.children[1].children.length}.`;
+    console.log(message);
+  });
+};
+category(totalCategories);
 
-
-
-// Variant 01 ============================
-const categoriesArray = [...totalCategories]
-    .map(categories =>
-        `Category: ${categories.children[0].textContent}
-         Elements: ${categories.children[1].children.length}`
-  )
-  .join("\n");   //separated by a newline
-console.log(categoriesArray);
-
-// Variant 02 ============================
-
-
+// Variant 02 .map   ============================
+// const categoriesArray = [...totalCategories]
+//     .map(categories =>
+//         `Category: ${categories.children[0].textContent}
+//          Elements: ${categories.children[1].children.length}`
+//   )
+//   .join("\n");   //separated by a newline
+// console.log(categoriesArray);
 
 

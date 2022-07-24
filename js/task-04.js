@@ -12,18 +12,16 @@
 
 //============================================
 const actions = document.querySelectorAll('.js-action button');
+const valueRef = document.querySelector('#value');
 var counterValue = 0;
 
 actions[0].addEventListener("click", () => {
     counterValue -= 1;
-    updateInterface();
+    valueRef.textContent = counterValue;
 });
 
 actions[1].addEventListener("click", () => {
     counterValue += 1;
-    updateInterface();
+  valueRef.textContent = counterValue;
 });
-function updateInterface() {
-    const valueRef = document.querySelector('#value');
-    valueRef.textContent = counterValue;
-}
+
